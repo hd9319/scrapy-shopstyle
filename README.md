@@ -1,2 +1,2 @@
 # scrapy-shopstyle
-ETL Pipeline for Shopstyle Data
+ETL Pipeline for Shopstyle Data using Scrapy.
