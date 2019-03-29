@@ -3,6 +3,7 @@
 import scrapy
 
 class TrendingPage(scrapy.Item):
+    page_id = scrapy.Field()
     url = scrapy.Field()
     title = scrapy.Field()
     author = scrapy.Field()

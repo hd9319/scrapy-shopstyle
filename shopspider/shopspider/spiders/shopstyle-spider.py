@@ -23,11 +23,12 @@ class TrendingSpider(scrapy.Spider):
         jsonResponse = json.loads(response.body)
 
         for pageDict in jsonResponse['trendPages']:
+            page_id = pageDict['id']
             url = DOMAIN + '/shop/trends/' + pageDict['urlIdentifier']
             title = pageDict['title']
             author = pageDict['author']['firstName'] + ' ' + pageDict['author']['lastName']
             tags = ';'.join(pageDict['tags'])
-            trendingPage = TrendingPage(url=url, title=title, author=author, tags=tags)
+            trendingPage = TrendingPage(page_id=page_id, url=url, title=title, author=author, tags=tags)
             yield trendingPage
 
 class MenClothesSpider(scrapy.Spider):
